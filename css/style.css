@@ -1,12 +1,25 @@
-.top {
+.container {
+    position: relative;
+    padding: 1rem;
+  }
+  
+  
+  .top {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
-}
+    align-items: center; /* center vertically */
+  }
 
-.container {
-    padding: 1rem;
-}
+  .top p {
+    margin: 2; /* remove margin */
+    flex: 0 0 auto; /* don't grow or shrink */
+  }
+  
+
+  .centered-text {
+    margin: 0 auto;
+  }
 
 .center {
     display: flex;
@@ -41,6 +54,7 @@ li {
 }
 
 .time {
+    margin-top:0vh;
     font-weight: normal;
     text-align: right;
     font-size: 22px;
@@ -99,16 +113,26 @@ li {
     overflow-y: scroll;
     max-height: 20vh;
 }
+
 .top-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
-    position: absolute;
-    top: 0;
-    left: 48%;
+    position: fixed;
+    top: 8vh;
+    text-align: center;
 }
 
 .bottom-text {
     position: absolute;
     bottom: 5%;
 }
+
+#position {
+position: fixed;
+  top: 4%;
+  right: 0;
+  padding: 5px;
+  font-family: sans-serif;
+  margin-right: 1rem;
+  }
