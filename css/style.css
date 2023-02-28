@@ -55,23 +55,35 @@
     position: relative;
 }
 img {
-    width: 35px;
+    width: 2rem;
 }
 .left .pro_img {
     width: 100%;
     max-width: 700px;
 }
 
+.logo{
+    margin-left: -1rem;
+    width: 8rem;
+    z-index: 1;
+}
+
 li {
     list-style: none;
 }
-.left ul {
+
+#trans{
+    width: 60px;
+    z-index: 2;
+}
+
+/* .left ul {
     display: flex;
     justify-content: left;
 }
 .left ul li {
-    margin-right: 1rem;
-}
+    margin-right: 0.3rem;
+} */
 
 .time {
     margin-top:-1vh;
@@ -112,22 +124,35 @@ li {
 }
 
 #keyword-input {
-    height: 30px;
-    border-radius: 5px;
-    padding-left: 5px;
+    height: 6.5vh;
+    border-radius: 10px;
+    padding-left: 18px;
     width: 35vw;
     width: 35vw;
     margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 550;
 }
-.search p {
-    width: 100%;
+/* .search p {
+    width: 3rem;
     text-align: right;
-}
+} */
+
+button#search-btn img {
+    width: 3vw;
+    background-color: white ;
+    padding: 0.5vw;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  
+
 #search-btn {
     padding: 0 !important;
     margin: 0;
-    border: 1px solid;
     cursor: pointer;
+    background-color: white ;
 }
 
 #result {
@@ -147,8 +172,14 @@ li {
 }
 
 .bottom-text {
-    position: absolute;
-    bottom: 5%;
+    bottom: .5rem;
+    right:1vw;
+    width:20vw;
+    position: fixed;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: 'Tronica Mono';
+    font-size: 15px;
 }
 
 #position {
@@ -159,4 +190,9 @@ position: fixed;
   font-family: 'Tronica Mono';
   font-size: 17px;
   margin-right: 1rem;
+  }
+
+  .icon{
+    position: fixed;
+    bottom:2vh;
   }
