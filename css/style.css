@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Tronica Mono';
+    src: url('../file/Tronica\ Mono.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'WangHan';
+    src: url('../file/WangHanZongTeMingTiFan-1.ttf') format('truetype');
+}
+
 .container {
     position: relative;
     padding: 1rem;
@@ -5,10 +17,15 @@
   
   
   .top {
+    font-family: 'Tronica Mono';
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
     align-items: center; /* center vertically */
+  }
+
+  .codete{
+    margin-bottom: 0.3vw;
   }
 
   .top p {
@@ -17,14 +34,17 @@
   }
   
 
-  .centered-text {
-    margin: 0 auto;
+.centered-text {
+    position: fixed;
+    text-align: center;
+    right:42vw;
+    margin-bottom: 2vh;
   }
 
 .center {
     display: flex;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
 }
 .left {
     width: 60%;
@@ -54,11 +74,13 @@ li {
 }
 
 .time {
-    margin-top:0vh;
-    font-weight: normal;
+    margin-top:-1vh;
+    font-family: 'Tronica Mono';
     text-align: right;
-    font-size: 22px;
-    margin-bottom: 30px;
+    font-size: 17px;
+    font-weight: normal;
+    margin-bottom: 50px;
+    margin-right: 12px;
 }
 
 .warn {
@@ -71,14 +93,15 @@ li {
     margin-left: 50px;
     margin-right: 5px;
 }
-.warn .first {
-    font-size: 16px;
-    font-weight: bold;
+.warn .first,
+.warn .two {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
-
 
 .warn img {
     position: absolute;
+    top:2vh;
     left: 0;
 }
 
@@ -115,12 +138,12 @@ li {
 }
 
 .top-title {
+    font-family: 'WangHan';
     font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-weight: normal;
     position: fixed;
-    top: 8vh;
     text-align: center;
+    margin-top: -1vh;
 }
 
 .bottom-text {
@@ -130,9 +153,10 @@ li {
 
 #position {
 position: fixed;
-  top: 4%;
+  top: 2%;
   right: 0;
   padding: 5px;
-  font-family: sans-serif;
+  font-family: 'Tronica Mono';
+  font-size: 17px;
   margin-right: 1rem;
   }
