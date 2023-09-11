@@ -1,0 +1,5 @@
+django2/ooooo/file
+.DS_Store
+.pyc
+venv/
+static/venv
