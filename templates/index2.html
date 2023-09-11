@@ -1,0 +1,702 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Genetic Text Innovation</title>
+    <link rel="stylesheet" href="{% static  'css/style.css' %}">
+</head>
+<script type="text/javascript" src="https://unpkg.com/three@0.120.1/build/three.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/three@0.120.1/examples/js/loaders/FBXLoader.js"></script>
+<script type="text/javascript" src="https://unpkg.com/three@0.120.1/examples/js/loaders/GLTFLoader.js"></script>
+
+<script type="text/javascript" src="https://unpkg.com/three@0.120.1/examples/js/libs/inflate.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/three@0.120.1/examples/js/controls/OrbitControls.js"></script>
+<script src="https://unpkg.com/tween.js@16.3.4"></script>
+
+
+<body>
+    <div class="border"></div>
+
+    <div class="container">
+        <div class="top">
+            <div class="codete">Codetexity</div>
+            <div class="data">GENETIC TEXT INNOVATION</div>
+            <div id="position"></div>
+        </div>
+
+
+        <div class="center">
+            <h1 class="top-title">文字編碼實驗</h1>
+            <div class="left">
+                <p class="top-text">
+                    Take time to experiment and test various techniques to identify which ones are most effective
+                    for your input text.
+                </p>
+                <!-- <img src="{% static 'img/pro.png' %}" alt="profile" class="pro_img"> -->
+                <div class="pro_img"></div>
+                <div class="warn">
+                    <p class="two">
+                        <img src="{% static 'img/warn.svg' %}" alt="warn">
+                    </p>
+                    <p class="first">
+                        Carefully read and review the instructions before starting your project. Failure to follow the
+                        instructions could result in errors or misunderstandings that may negatively impact the outcome.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="right">
+                <h1 class="time"></h1>
+
+                <div class="step">
+                    <p class="step1">
+                        1 > <br>
+                        Start the Codetexity by <br> clicking on <span class="step-bold"> (start)</span>.
+                    </p>
+                    <p class="step2">
+                        2 >><br>
+                        Please input a <span class="step-bold">(noun) </span> in <br> the box.
+                    </p>
+                    <p class="step3">
+                        2.5 >> <br>
+                        You may also press <span class="step-bold">(text) </span>to assist in generating a word.
+                    </p>
+                    <p class="step4">
+                        3 >>> <br>
+                        To obtain a result, press <br> the <span class="step-bold">(return)</span> key.
+                    </p>
+                    <p class="step5">
+                        4 >>>><br>
+                        To play again, press the <br> <span class="step-bold">(Restart)</span> button.
+                    </p>
+                </div>
+
+
+                <div class="search">
+                    <div class="around-input">
+                        <p id="noun">ENTER A NOUN</p>
+                        <input type="text" id="keyword-input" disabled="true">
+                    </div>
+                    <p>
+                        <button id="text-btn"  disabled="true" onclick="randomText()"> <img src="{% static 'img/25.svg' %}"></button>
+                        <button id="search-btn" disabled="true" onclick="ok()"> <img
+                                src="{% static 'img/26.svg' %}"></button>
+                    </p>
+                    <div id="result">
+                        <div class="ChatGPT" style="display:none">
+
+                            <div class="smallCircle"></div>
+                            <p class="Date">2023-01-29 13:27:40</p>
+
+                            <p class="hiddenDate"></p>
+
+                            <div class="right">
+                                <div class="left1">
+                                    <p class="keyword">languages</p>
+                                    <p class="User">@joedale</p>
+                                </div>
+                                <div class="right2"></div>
+
+                            </div>
+                            <p class="Tweet">UK Independent modernforeign languages &technology consultant.Former host
+                                of
+                                TES MFL forum& short-listed for NAACEImpact Award 2013 forCurriculum Support</p>
+
+                            <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+                        </div>
+
+                        <div class="amazon" style="display:none">
+                            <div class="part1">
+                                <p class="category">
+                                    Computors&Accosgories|Accossorios&Poripharal|Cabloc&Accassorios|CablosUSBCablos</p>
+                                <ul class="actual_price1">
+                                    <li>Actual_price</li>
+                                    <li class="actual_price">1,799</li>
+                                </ul>
+                                <ul class="actual_price1">
+                                    <li>Discounted price</li>
+                                    <li class="discounted_price">1,799</li>
+                                </ul>
+                            </div>
+                            <div class="part2">
+                                <div class="left">
+                                    <p class="key">
+                                        Plugging And Unplugging Test EnsureThis Cable A Longer LifespanlEnsure Fast And
+                                        Stable DattTransmission Up
+                                    </p>
+                                    <p class="title">APPLE</p>
+                                </div>
+                                <div class="right">
+                                    <p class="about_product">000+Bend And 10，000+ Plugging And Unplugging Test
+                                        EnsureThis Cable A Longer LifespanlEnsure Fast And Stable DattTransmission Up To
+                                        480 Mbps|2 Years WarrantylCompatibleDegigned To Work Flawlesgly With Mfi Or
+                                        Apple Devices,Iphone， Imac，Ipad Etc|1.2MTangle</p>
+                                </div>
+
+
+                            </div>
+
+                            <div class="part3">
+                                <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+                                <ul>
+                                    <li>Rating</li>
+                                    <li class="rating">4.5</li>
+                                </ul>
+                                <ul>
+                                    <li>Rating_count</li>
+                                    <li class="rating_count">815</li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+                        <div class="urbandict-word-defs" style="display:none">
+                            <p class="time">12:12AM Mar 2,2023</p>
+                            <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+                            <p class="word"></p>
+                            <p class="definition">what the fuck? ;; use it in place ofexpletives. a more polite
+                                alternative.</p>
+                        </div>
+
+                        <div class="PoetryFoundationData" style="display:none">
+                            <div class="top">
+                                <p class="time">12:12AM Mar 2，2023</p>
+                                <p class="copy">© Poetry FoundationPoems</p>
+                            </div>
+
+                            <p class="Title">Title</p>
+                            <p class="Poet">(Alice B.Fogel)</p>
+                            <p class="Poem">Radiant dog on doublecross,and I, by night, a raven fly.My fear is that
+                                eternity hasan alm that is ordinary toten thousend and worn from mystrings, my console
+                                of limbs,and I a missing part.
+                                It is the world that's new,not T. and submarines canshoot the land from thewheelbarrow
+                                of sickly pastorals.</p>
+                            <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+
+                        </div>
+
+                        <div class="one-million-reddit-jokes" style="display:none">
+                            <div class="bg"><img src="{% static 'img/177.svg' %}"></div>
+                            <p class="selftext">I love how manypeople jump 3 feetwhen I start callinghim.</p>
+                            <p class="time">12:12AM Mar 2,2023</p>
+                            <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+                            <p class="copyright">© REDDIT - JOKE</p>
+                        </div>
+
+                        <div class="wikisent2" style="display:none">
+                            <div class="bg"><img src="{% static 'img/177.svg' %}"></div>
+                            <p class="selftext">I love how manypeople jump 3 feetwhen I start callinghim.</p>
+                            <p class="time">12:12AM Mar 2,2023</p>
+                            <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+                            <p class="copyright">© WIKISENT2</p>
+                        </div>
+
+                        <div class="musiccaps-public" style="display:none">
+                            <p class="title">Coffee</p>
+                            <p class="artist">Genetic Text Innovation</p>
+                            <p class="album">www.jialinhuang.com</p>
+                            <p class="lr"><span>QTY</span> <span>ASPECT</span></p>
+                            <p>*********************************************************************</p>
+                            <div class="aspect_list">
+                                <ol></ol>
+                            </div>
+                            <p>*********************************************************************</p>
+                            <h3>CAPTION</h3>
+
+                            <p class="caption">
+                                This sone foaturps an electricguitar as tha main instrument. Thocuitar plays a
+                                doacending run intho bopinning thon pleys an erpoggiatod chord followad by a doublestoo
+                                herner on to e hicher pote enda degcendine slide followed by adoaconding chord run . Tho
+                                percus-sion playa a simplg boat using rirshote. The cercuggion oleyg incornon tire. The
+                                bees oleyg onlyone note om the firat count of aachbar. Tha piano plays backingchorda.
+                                There aro no voicea in thissong. The nood of thig sone igrolaxing. This song can be
+                                playedin a coffos ahop.
+                            </p>
+                            <p>*********************************************************************</p>
+                            <h5>Source </h5>
+                            <div class="musiccaps-public-bottom">
+                                <p> Google Research - MusicCaps</p>
+                                <p>http://arxiv.org/abs/2301.11325</p>
+                                <p>(DOl: 10.48550/arXiv.2301.11325)</p>
+                            </div>
+                            <p class="logo"><img src="{% static 'img/Logo.svg' %}"></p>
+
+
+                        </div>
+
+                        <div class="txt_file" style="display:none">
+                            <p id="txt_sentence"></p>
+                            <div class="bg"><img src="{% static 'img/166.svg' %}"></div>
+                            <div class="month"></div>
+                            <div class="year"></div>
+                            <div class="text"></div>
+                            <div class="time"></div>
+                            <div class="logo"><img src="{% static 'img/Logo.svg' %}"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <p><img class="bottom-text" src="{% static 'img/Logo.svg' %}"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="{% static './js/ScrambleText.js' %}"></script>
+    <script src="{% static './js/jq.js' %}"></script>
+    <script src="{% static './js/main.js' %}"></script>
+
+</body>
+
+
+<!-- THREE -->
+
+<script>
+    let camera, scene, renderer;
+
+    const clock = new THREE.Clock();
+
+    let mixer;
+    let container;
+    let controls;
+    let model;
+    let time = 0;
+    let textTexture;
+
+
+
+
+    init();
+    animate();
+    modelAnimation();
+    // 重置按钮
+    function reSetAnimation() {
+        let btn = scene.getObjectByName('Cylinder');
+        let tween = new TWEEN.Tween({
+            x: 0
+        }).to({
+            x: -1.5
+        }, 1000).easing(TWEEN.Easing.Quadratic.Out).onUpdate(function () {
+            btn.position.y = 0.1 * Math.sin(this.x * Math.PI) + 0.2
+
+
+        }).onComplete(function () {
+            // console.log('complete');
+            // 刷新页面
+            window.location.reload();
+        }).start();
+    }
+    // 按钮动画 tween
+    function btnAnimation() {
+        let btn = scene.getObjectByName('Buttom');
+        let tween = new TWEEN.Tween({
+            x: 0
+        }).to({
+            x: -1
+        }, 1000).easing(TWEEN.Easing.Quadratic.Out).onUpdate(function () {
+            btn.position.y = 0.5 * Math.sin(this.x * Math.PI);
+
+
+        }).onComplete(function () {
+            console.log('complete');
+            //步骤2开始展示出来
+            stepStart();
+            //随机词按钮
+            let btn1 = document.getElementById('text-btn')
+            btn1.disabled = false;
+            btn1.style.cursor = 'pointer';
+
+            //input框解除禁止输入
+            let input = document.getElementById('keyword-input')
+            input.disabled = false;
+
+
+            // 获取button 元素 disabled = false  可以点击按钮进行搜索
+            let btn = document.getElementById('search-btn')
+            btn.disabled = false;
+            btn.style.cursor = 'pointer';
+
+        }).start();
+    }
+    // 模型动画 左右旋转 infinite yo yo
+    function modelAnimation() {
+        let tween = new TWEEN.Tween({
+            x: -0.1
+        }).to({
+            x: 0.1
+        }, 4000).repeat(Infinity).yoyo(true).delay(500).onUpdate(function () {
+            model.rotation.y = this.x * Math.PI;
+
+        }).start();
+
+    }
+
+
+
+    // 生成canvas贴图
+    function createCanvasTexture(text) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 900;
+        canvas.height = 128;
+        const context = canvas.getContext('2d');
+        // 为canvas添加透明背景
+        context.fillStyle = 'rgba(255, 255, 255, 0)';
+        context.fillRect(0, 0, 900, 128);
+        context.font = ' 80px Tronica Mono';
+        context.fillStyle = 'rgb(0, 0, 0)';
+        context.fillText(text, 40, 90);
+        const texture = new THREE.CanvasTexture(canvas);
+
+        texture.repeat.set(1, 1);
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+
+
+
+        textTexture = texture;
+        return texture;
+    }
+    // 为物体添加贴图
+    function addTextureToMesh(texture) {
+        const mesh = scene.getObjectByName('inputPlane');
+        const material = new THREE.MeshBasicMaterial({
+            map: texture,
+            transparent: true,
+        });
+        mesh.material = material;
+    }
+    // 初始化three 环境
+    function init() {
+
+        container = document.getElementsByClassName('pro_img')[0];
+
+        // camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 5000, 20000);
+        camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 50, 20000);
+        camera.position.set(1000, 2000, 3000);
+
+        scene = new THREE.Scene();
+        // scene.background = new THREE.Color(0xffffff);
+
+
+        // scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
+
+        const hemiLight = new THREE.HemisphereLight(0xffffff);
+        hemiLight.position.set(0, 200, 0);
+        
+hemiLight.intensity = 0.83
+        scene.add(hemiLight);
+        console.log(scene, 'scene')
+
+        const dirLight = new THREE.DirectionalLight(0xffffff);
+        dirLight.position.set(0, 200, 100);
+        dirLight.castShadow = true;
+        dirLight.shadow.camera.top = 180;
+        dirLight.shadow.camera.bottom = -100;
+        dirLight.shadow.camera.left = -120;
+        dirLight.shadow.camera.right = 120;
+        dirLight.intensity = 0.2;
+        scene.add(dirLight);
+
+        // scene.add(new THREE.CameraHelper(dirLight.shadow.camera));
+        // 创建平面显示文字
+        const planeGeometry = new THREE.PlaneGeometry(900, 128, 1, 1);
+        const planeMaterial = new THREE.MeshBasicMaterial({
+            color: 0xff0000,
+            transparent: true,
+            opacity: 0
+        });
+        const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.position.set(-0.0598, -0.013, 0.003);
+        // translate plane to be upright
+        // plane.translateZ(-0.6);
+        plane.scale.set(1.2 * 0.00005, 1.6 * 0.00005, 1);
+        plane.name = 'inputPlane';
+        // scene.add(plane);
+
+
+
+        // model
+        // const loader = new THREE.FBXLoader();
+        // gltf
+        const loader = new THREE.GLTFLoader();
+
+        //  3d模型
+        // let url = '/static/model/model3.fbx'
+        // let url = '/static/model/model4.gltf'
+        let url = '/static/model/modelx.gltf'
+
+
+
+        loader.load(url, obj => {
+            console.log(obj, 'obj');
+            let modelObj = obj.scene;
+            // let modelObj = obj;
+            modelObj.scale.set(20000, 20000, 20000);
+            modelObj.position.set(-2000, 450, 0);
+            model = modelObj;
+            model.add(plane);
+
+
+
+            scene.add(modelObj)
+            console.log(scene, 'scene');
+        }, (xhr) => {
+            // vm.visible = true;
+
+            console.log('加载完成的百分比' + (xhr.loaded / xhr.total) * 100 + '%');
+            // vm.loadPercent = Math.floor((xhr.loaded / xhr.total) * 100);
+        })
+
+        renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true
+        });
+        // 透明
+        renderer.setClearColor(0xffffff, 0);
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.shadowMap.enabled = true;
+        container.appendChild(renderer.domElement);
+        renderer.domElement.style.outline = 'none';
+
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.03
+        controls.screenSpacePanning = false;
+        // 限制相机的旋转范围
+        controls.minAzimuthAngle = -Math.PI / 4;
+        controls.maxAzimuthAngle = Math.PI / 4;
+        controls.minPolarAngle = Math.PI / 3.9;
+        controls.maxPolarAngle = Math.PI / 1.3;
+        // controls.autoRotate = true;
+        // 顺时针旋转
+        // controls.rotateSpeed = -0.3;
+        // 逆时针旋转
+        // controls.rotateSpeed = 0.3;
+
+        // controls.enableZoom = false;
+
+
+
+
+
+
+        controls.target.set(-2300, 500, 0);
+        controls.update();
+
+        window.addEventListener('resize', onWindowResize);
+
+
+
+        // 鼠标射线事件
+        let raycaster = new THREE.Raycaster();
+        let mouse = new THREE.Vector2();
+        // 当鼠标单击
+        function onMouseMove(event) {
+            event.preventDefault();
+            // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
+            mouse.x = (event.offsetX / container.clientWidth) * 2 - 1;
+            mouse.y = -(event.offsetY / container.clientHeight) * 2 + 1;
+            // 通过摄像机和鼠标位置更新射线
+            raycaster.setFromCamera(mouse, camera);
+
+            // 计算物体和射线的焦点
+            // let obj = modelList[0];
+            let obj = scene.children;
+
+            if (obj) {
+                let intersects = raycaster.intersectObjects(obj, true);
+                // for (let i = 0; i < intersects.length; i++) {
+                //   // debugger;
+                //   alert(intersects[i].object.name, i, '1');
+                //   // intersects[i].object.visible = false;
+                // }
+                let object = intersects[0].object;
+
+                console.log(scene, 'scene_g')
+                if (object !== null && object !== scene && object !== camera) {
+
+                    switch (object.name) {
+                        case "Buttom":
+                            // object.position.y = 0;
+                            btnAnimation();
+
+                            break;
+                        case "Cylinder":
+                            // object.position.y = 0;
+                            // btnAnimation();
+                            console.log('点击了圆柱体')
+                            reSetAnimation()
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    console.log(object, '选中的模型')
+                }
+                // object.material.color = new THREE.Color('red');
+            }
+        }
+        window.addEventListener('click', onMouseMove, false);
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(container.clientWidth, container.clientHeight);
+
+    }
+
+
+    //
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+        const delta = clock.getDelta();
+
+        if (mixer) mixer.update(delta);
+        if (textTexture) {
+            textTexture.offset.x -= 0.001;
+
+            textTexture.needsUpdate = true;
+
+        }
+
+        renderer.render(scene, camera);
+        controls.update();
+        TWEEN.update()
+
+
+
+
+    }
+</script>
+<script>
+    function ok() {
+
+        $('.ChatGPT').css('display', 'none')
+        $('.amazon').css('display', 'none')
+        $('.musiccaps-public').css('display', 'none')
+        $('.PoetryFoundationData').css('display', 'none')
+        $('.urbandict-word-defs').css('display', 'none')
+        $('.one-million-reddit-jokes').css('display', 'none')
+        $('.wikisent2').css('display', 'none')
+        $('.txt_file').css('display', 'none')
+        let val = $('#keyword-input').val()
+
+        if (val == '') {
+            alert('Please enter a keyword')
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1:8000/find",
+            "timeout": 60000,
+            data: {
+                keyword: val,
+            },
+            success: function (res) {
+                console.log(res);
+                if (res.data.key == '') {
+                    alert('Empty result')
+                } else {
+
+                    //最后步骤
+                    stepEnd();
+
+                    //往上移动，数字越小越慢
+                    searchMove1(5);
+
+                    if (res.file == 'ChatGPT') {
+                        $('.ChatGPT').css('display', 'block')
+                        // $('.ChatGPT #key').text(res.data.key)
+                        // $('.ChatGPT #User').text(res.data.User)
+                        // $('.ChatGPT #Date').text(res.data.Date)
+                        $('.ChatGPT .keyword').text(val);
+                        ChatGPT(res.data.key, res.data.User, res.data.Date)
+                    }
+                    if (res.file == 'amazon') {
+                        $('.amazon').css('display', 'block')
+                        // $('.amazon #about_product').text(res.data.about_product)
+                        // $('.amazon #rating').text(res.data.rating)
+                        // $('.amazon #rating_count').text(res.data.rating_count)
+                        // $('.amazon #product_name').text(res.data.key)
+                        // $('.amazon #category').text(res.data.category)
+                        // $('.amazon #actual_price').text(res.data.actual_price)
+                        // $('.amazon #discounted_price').text(res.data.discounted_price)
+                        $('.amazon .title').text(val);
+                        // res.data.category = 'Computors&Accosgories|Accossorios&Poripharal|Cabloc&Accassorios|CablosUSBCablos';
+                        amazon(res.data.about_product, res.data.rating, res.data.rating_count, res.data.key,
+                            res.data.category, res.data.actual_price, res.data.discounted_price)
+                    }
+                    if (res.file == 'musiccaps-public') {
+                        $('.musiccaps-public').css('display', 'block')
+                        // $('.musiccaps-public #aspect_list').text(res.data.aspect_list)
+                        // $('.musiccaps-public #caption').text(res.data.key)
+                        // res.data.aspect_list =
+                        //     "['amateur recording', 'finger snipping', 'male mid range voice singing', 'reverb']";
+                        $('.musiccaps-public').find('.title').text(val);
+                        musiccaps_public(res.data.aspect_list, res.data.key);
+                    }
+                    if (res.file == 'PoetryFoundationData') {
+                        $('.PoetryFoundationData').css('display', 'block')
+                        // $('.PoetryFoundationData #Title').text(res.data.key)
+                        // $('.PoetryFoundationData #Poem').text(res.data.Poem)
+                        // $('.PoetryFoundationData #Poet').text(res.data.Poet)
+                        PoetryFoundationData(res.data.key, res.data.Poem, res.data.Poet)
+                    }
+                    if (res.file == 'urbandict-word-defs') {
+                        $('.urbandict-word-defs').css('display', 'block')
+                        $('.urbandict-word-defs .word').text(res.data.key)
+                        // $('.urbandict-word-defs #definition').text(res.data.definition)
+                        $('.urbandict-word-defs').find('.title').text(val);
+                        urbandict_word_defs(res.data.key, res.data.definition);
+                    }
+                    if (res.file == 'one-million-reddit-jokes') {
+                        $('.one-million-reddit-jokes').css('display', 'block')
+                        // $('.one-million-reddit-jokes #selftext').text(res.data.key)
+                        one_million_reddit_jokes(res.data.key);
+                    }
+                    if (res.file == 'wikisent2') {
+                        $('.wikisent2').css('display', 'block')
+                        wikisent2(res.data.key);
+                    }
+                    if (res.type == 'txt') {
+                        $('.txt_file').css('display', 'block')
+                        //padding:10px 0;
+                        $('#result').css('padding', '100px 0');
+                        $('.txt_file').css('display', 'block')
+                        // $('.txt_file #txt_sentence').text(res.data.key)
+                        write_txt(res.data.key);
+                    }
+                }
+                // scrollBottom1();
+                console.log(res);
+            },
+            error: function (res) {
+                console.log(res);
+            }
+
+        });
+        // 模型显示文字
+        let texture = createCanvasTexture(val);
+        addTextureToMesh(texture);
+
+    }
+</script>
+
+</html>

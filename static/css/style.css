@@ -1,0 +1,853 @@
+@font-face {
+  font-family: "Tronica Mono";
+  src: url("../file/Tronica\ Mono.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WangHan";
+  src: url("../file/WangHanZongTeMingTiFan-1.ttf") format("truetype");
+}
+
+/* Regular weight */
+@font-face {
+  font-family: "Input Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../file/InputMono-Regular.ttf) format("truetype");
+}
+
+/* Bold weight */
+@font-face {
+  font-family: "Input Mono";
+  font-style: bold;
+  font-weight: 700;
+  src: url(../file/InputMono-Bold.ttf) format("truetype");
+}
+
+/* * {
+    font-family: 'Tronica Mono';
+} */
+
+body {
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  /* padding: 1rem; */
+}
+
+.top {
+  font-family: "Tronica Mono";
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 1px solid black; */
+  align-items: center;
+  margin-top: 2.5vh;
+  /* center vertically */
+}
+
+.codete {
+  font-size: 15px;
+  margin-left: 2vw;
+  margin-bottom: 0.3vw;
+}
+
+.top p {
+  margin: 2;
+  /* remove margin */
+  flex: 0 0 auto;
+  /* don't grow or shrink */
+}
+
+.centered-text {
+  position: fixed;
+  text-align: center;
+  right: 42vw;
+  margin-bottom: 2vh;
+}
+
+.top .data,
+.top .codete,
+.top #position {
+  width: 30%;
+}
+
+.top .codete {
+  text-align: left;
+}
+
+.top #position {
+  text-align: right;
+}
+
+.top-text {
+  font-family: "Input Mono";
+  font-style: normal;
+  text-align: left;
+  font-size: 12px;
+  position: fixed;
+  right: 6vh;
+  top: 16vh;
+  width: 27%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+}
+
+.left {
+  width: 60%;
+  text-align: center;
+}
+
+.right {
+  width: 40%;
+  position: relative;
+}
+
+img {
+  width: 2rem;
+}
+
+.left .pro_img {
+  width: 100%;
+  /* max-width: 700px; */
+  height: 92vh;
+  scale: 95%;
+  /* border: 1px solid red; */
+  /* padding-left: 20px !important; */
+  /* transform: translateX(-20%) translateY(-20%); */
+}
+
+.border {
+  position: fixed;
+  border: 1px solid black;
+  /* creates the border around the rectangle */
+  top: 5vh;
+  width: 98vw;
+  height: 93vh;
+  left: 1vw;
+}
+
+.logo {
+  margin-left: -1rem;
+  width: 8rem;
+  z-index: 1;
+}
+
+li {
+  list-style: none;
+}
+
+/* .left ul {
+    display: flex;
+    justify-content: left;
+}
+.left ul li {
+    margin-right: 1rem;
+} */
+
+.time {
+  margin-top: 0.5vh;
+  font-family: "Tronica Mono";
+  text-align: right;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 50px;
+  margin-right: 2vw;
+}
+
+.warn {
+  position: fixed;
+  top: 9vh;
+  right: 2vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: right;
+}
+
+.warn p {
+  font-size: 14px;
+  margin-left: 80px;
+  margin-right: 0px;
+}
+
+.warn .first,
+.warn .two {
+  font-family: "Input Mono";
+  font-style: normal;
+  font-size: 12px;
+  bottom: 0.9rem;
+  text-align: left;
+  display: inline-block;
+}
+
+.warn .first {
+  width: 85%;
+}
+
+.warn .two {
+  width: 10%;
+  text-align: left;
+  position: absolute;
+  top: 10%;
+  left: -10%;
+}
+
+.warn img {
+  position: fixed;
+  width: 100%;
+  max-width: 48px;
+  right: 31.5vw;
+  top: 10vh;
+}
+
+.search {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  margin-top: 365px;
+  margin-right: 2vw;
+}
+
+.around-input {
+  position: fixed;
+  width: 28vw;
+  height: 9.5vh;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#noun {
+  text-align: right;
+  font-family: "Input Mono";
+  font-size: 13px;
+  margin-bottom: -.05vh;
+  margin-top: 5px;
+  margin-right: 6px;
+}
+
+#keyword-input {
+  height: 6.5vh;
+  border: 1px solid black;
+  padding-left: 18px;
+  width: 26vw;
+  margin-left: 7px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+
+button#search-btn img,
+button#text-btn img {
+  margin-top: 9vh;
+  width: 5vw;
+  padding: 0vw;
+}
+
+#search-btn,
+#text-btn {
+  padding: 0 !important;
+  margin: 0;
+  /* cursor: pointer; */
+  /* // 鼠标显示无法点击状态 */
+  cursor: not-allowed;
+  background-color: white;
+  border: none;
+  top: 45vh;
+}
+
+#result {
+  width: 100%;
+  margin-left: 50px;
+  overflow-y: scroll;
+  max-height: 350px;
+  /* padding: 100px 0; */
+}
+
+.top-title {
+  font-family: "WangHan";
+  font-size: 17px;
+  font-weight: normal;
+  position: fixed;
+  text-align: center;
+  margin-top: 0.5vh;
+}
+
+.bottom-text {
+  right: 1vw;
+  position: fixed;
+  bottom: 2rem;
+  width: 18vw;
+  max-width: 200px;
+}
+
+.data {
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Tronica Mono";
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-align: center;
+
+  /* position: fixed;
+    text-align: center;
+    left: 40.5vw;
+    margin-bottom: -1.6vh; */
+}
+
+#position {
+  /* position: fixed; */
+  top: 2%;
+  right: 0;
+  padding: 5px;
+  font-family: "Tronica Mono";
+  font-size: 15px;
+  margin-right: 2rem;
+}
+
+.icon {
+  /* position: fixed; */
+  margin-bottom: 2vh;
+}
+
+.txt_file {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  /* 右旋转90度 */
+  transform: rotate(90deg);
+  display: none;
+  margin-top: 300px;
+}
+
+.txt_file .month,
+.txt_file .year,
+.txt_file .time,
+.txt_file .logo {
+  position: absolute;
+  font-family: "Input Mono";
+  font-style: normal;
+  margin-top: 6px;
+}
+
+.txt_file .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.txt_file .bg img,
+.urbandict-word-defs .bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.txt_file .month {
+  top: 26%;
+  left: 31%;
+  font-size: 1rem;
+}
+
+.txt_file .year {
+  top: 26%;
+  left: 54.5%;
+  font-size: 1rem;
+}
+
+.txt_file .text {
+  position: absolute;
+  top: 38%;
+  font-family: "Input Mono";
+  font-style: normal;
+  left: 10%;
+  font-size: 1.2rem;
+  max-width: 70%;
+  word-wrap: break-word;
+  /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.txt_file .time {
+  top: 61.5%;
+  left: 17%;
+  font-size: 0.8rem;
+}
+
+.txt_file .logo {
+  top: 54%;
+  right: 49px;
+}
+
+.txt_file .logo img {
+  width: 120px;
+}
+
+.urbandict-word-defs {
+  display: block;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.urbandict-word-defs {
+  position: relative;
+  margin-top: 300px;
+}
+
+.urbandict-word-defs .time {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  margin: 0;
+}
+
+.urbandict-word-defs .logo {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  width: 90px;
+  margin: 0;
+}
+
+.urbandict-word-defs .logo img {
+  width: 100%;
+}
+
+.urbandict-word-defs .word {
+  font-family: "Input Mono";
+  font-weight: 700;
+  margin-top: 15vh;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.urbandict-word-defs .definition {
+  font-family: "Input Mono";
+  margin-left: 1rem;
+  margin-top: 10px;
+  width: 70%;
+  font-size: 1rem;
+}
+
+.one-million-reddit-jokes {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin-left: 100px;
+}
+
+.one-million-reddit-jokes .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.one-million-reddit-jokes .bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.one-million-reddit-jokes .time {
+  position: absolute;
+  font-family: "Input Mono";
+  font-style: normal;
+  top: 22%;
+  left: 13%;
+  margin: 0;
+}
+
+.one-million-reddit-jokes .logo {
+  position: absolute;
+  right: 13.5%;
+  top: 4%;
+  margin: 0;
+}
+
+.one-million-reddit-jokes .logo img {
+  width: 150px;
+}
+
+.one-million-reddit-jokes .copyright {
+  position: absolute;
+  font-family: "Input Mono";
+  font-style: normal;
+  bottom: 2%;
+  left: 40%;
+}
+
+.one-million-reddit-jokes .selftext {
+  position: absolute;
+  font-family: "Input Mono";
+  font-style: normal;
+  top: 41%;
+  width: 70%;
+  left: 17%;
+  font-size: 1rem;
+  /* line-height: 1.5;
+    letter-spacing: 2px; */
+}
+
+.musiccaps-public .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Tronica Mono";
+  margin: 1rem;
+}
+
+.musiccaps-public .artist,
+.musiccaps-public .album,
+.musiccaps-public h3,
+.musiccaps-public h5,
+.musiccaps-public-bottom {
+  font-family: "Input Mono";
+  text-align: center;
+}
+
+.musiccaps-public .artist,
+.musiccaps-public .album {
+  font-size: 0.8rem;
+}
+
+.musiccaps-public-bottom {
+  font-size: 0.8rem;
+}
+
+.musiccaps-public .lr {
+  font-family: "Input Mono";
+  display: flex;
+  justify-content: space-between;
+}
+
+.musiccaps-public h3 {
+  font-size: 1.2rem;
+}
+
+.musiccaps-public .caption {
+  font-family: "Input Mono";
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.musiccaps-public h5 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0.2vh;
+}
+
+.musiccaps-public {
+  width: 500px;
+  overflow-x: hidden;
+  margin-left: 100px;
+}
+
+.musiccaps-public .logo {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.musiccaps-public .logo img {
+  width: 100%;
+}
+
+.ChatGPT {
+  font-family: "Input Mono";
+  font-style: normal;
+  width: 500px;
+  margin-left: 100px;
+  border: 1px solid;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  height: 300px;
+}
+
+.ChatGPT .logo {
+  float: left;
+  position: absolute;
+  left: 3%;
+  bottom: -7%;
+}
+
+.ChatGPT .logo img {
+  width: 150px;
+}
+
+.ChatGPT .right {
+  display: inline-block;
+  width: 46%;
+}
+
+.ChatGPT .Date {
+  display: inline-block;
+  width: 50%;
+  margin-top: 0;
+  height: 50px;
+  position: absolute;
+  top: 2%;
+  left: 6%;
+  font-size: 0.8rem;
+  line-height: 10px;
+}
+
+.ChatGPT .left1 p {
+  margin: 0;
+  line-height: 1.5;
+  width: 75%;
+  display: inline-block;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ChatGPT .User p {
+  color: #706f6f;
+  font-family: "Input Mono";
+  font-style: bold;
+}
+
+.ChatGPT .right2 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #313231;
+  border-radius: 50%;
+  /* float: right; */
+  right: 2%;
+  top: 1.5%;
+}
+
+.hiddenDate {
+  opacity: 0;
+  display: inline-block;
+  width: 50%;
+  margin-top: 0;
+}
+
+.ChatGPT .Tweet {
+  position: absolute;
+  width: 65%;
+  text-align: right;
+  float: right;
+  line-height: 1.5;
+  font-size: 1rem;
+  right: 4%;
+  margin-top: 3.5vh;
+}
+
+.PoetryFoundationData {
+  font-family: "Input Mono";
+  width: 500px;
+  margin-left: 100px;
+}
+
+.PoetryFoundationData .copy,
+.PoetryFoundationData .time {
+  font-size: 0.8rem;
+}
+
+.PoetryFoundationData .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  border-bottom: 0;
+}
+
+.PoetryFoundationData p {
+  margin: 0;
+}
+
+.PoetryFoundationData .Title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 15vh;
+  margin-bottom: 20px;
+}
+
+.PoetryFoundationData .Poem {
+  margin-top: 5vh;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  margin-left: 5vw;
+}
+
+.PoetryFoundationData .Poet {
+  line-height: 1.5;
+  border-left: 1px solid;
+  padding-left: 20px;
+}
+
+.PoetryFoundationData .logo,
+.PoetryFoundationData .logo img {
+  width: 16vw;
+  margin-left: 4vw;
+}
+
+.amazon {
+  width: 700px;
+  font-family: "Input Mono";
+}
+
+.amazon .part1,
+.amazon .part2,
+.amazon .part3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.amazon .part1 .category {
+  width: 40%;
+  text-align: left;
+}
+
+.amazon .part1 .actual_price1 {
+  width: 30%;
+  text-align: center;
+}
+
+.amazon ul,
+.amazon p,
+.amazon div {
+  margin: 0;
+  padding: 0;
+}
+
+.amazon .part1 .actual_price1 li,
+.amazon .part3 li {
+  margin-bottom: 1rem;
+}
+
+.amazon .part2 {
+  background-color: #b2b2b2;
+  padding: 0.8rem;
+}
+
+.amazon .part2 .left {
+  width: 38%;
+}
+
+.amazon .part2 .right {
+  width: 50%;
+}
+
+.amazon .part2 .left .key {
+  text-align: left;
+}
+
+.amazon .part2 .left .title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 3rem;
+}
+
+.amazon .part3 .logo {
+  width: 200px;
+}
+
+.amazon .part3 .logo img {
+  width: 100%;
+}
+
+.amazon .part3 ul {
+  margin-top: 2rem;
+}
+
+.aspect_list li {
+  font-family: "Input Mono";
+  list-style: number;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.smallCircle {
+  background: #313231;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 2%;
+  left: 3%;
+}
+
+#text-btn {
+  cursor: pointer;
+}
+
+.step {
+  position: fixed;
+  right: 6vh;
+  top: 21vh;
+  width: 27%;
+  font-family: "Input Mono";
+  font-size: .7rem;
+}
+
+.step p {
+  margin-bottom: 5px;
+  padding: 0;
+  color: #000000;
+  background-color: white;
+  /* position: absolute; */
+  /* top: 1vh; */
+  /* //大写 */
+  text-transform: uppercase;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.step-bold{
+  font-style: bold;
+  font-weight: 700 !important;
+}
+
+.step .step2,
+.step .step3{
+  /* width: 49%;
+  display: inline-block;
+   */
+  display: inline-block;
+  
+}
+
+
+
+.step .step2 {
+  /* color: #706F6F; */
+  opacity: 0.75;
+  width: 100%;
+  background-color: white;
+  z-index: 1111;
+}
+
+.step .step3 {
+  display: none;
+  margin-left: -200px;
+  /* color: #787777; */
+  z-index: -1;
+  width: 47%;
+}
+
+.step4 {
+  opacity: 0.5;
+  /* color: #b8b8b8; */
+}
+
+.step5 {
+  opacity: 0.25;
+  /* color: #ededed; */
+}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static  'css/style1.css' %}">
+
+</head>
+
+<body onclick="location='http://127.0.0.1:8000/index'" >
+    <div class="container">
+        <div class="data"   >GENETIC TEXT INNOVATION</div>
+
+        <br>
+        <br>
+        <br>
+        <p class="tip">To continue exploring, please maximize the size of the web page</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
+    <script>
+        const text = baffle('.data');
+        text.set({
+            characters: 'सब्बेव रूपे रूपं न पश्यति',
+            // characters:'一切有為法，如夢幻泡影，如露亦如電，應作如是觀',
+            speed: 120
+        });
+
+        function runAnimation() {
+            text.start().reveal(2000);
+            setTimeout(pauseAnimation, 4000);
+        }
+
+        function pauseAnimation() {
+            if (text.text() === 'GENETIC TEXT INNOVATION') {
+                setTimeout(runAnimation, 5000);
+            }
+        }
+
+
+        runAnimation();
+
+
+        //检测窗口是否为1920*1080 如果不是则提示用户  To continue exploring, please maximize the size of the web page
+
+        function checkSize() {
+            console.log(window.innerWidth, window.innerHeight);
+            if (window.innerWidth <= 1920) {
+                document.querySelector('.tip').style.display = 'block';
+            }else{
+                document.querySelector('.tip').style.display = 'none';
+            }
+        }
+
+        //每秒检测一次窗口大小
+        setInterval(checkSize, 1000);
+
+
+
+
+    </script>
+</body>
+
+
+
+
+
+
+
+</html>
