@@ -22,7 +22,7 @@ def find(request):
 
         if file_type == 'csv':
             # 读取csv文件
-            df = pd.read_csv(open(object_url, 'r', transport_params=transport_params), header=0)
+            df = pd.read_csv(open(object_url, 'r', transport_params=transport_params, encoding='utf-8'), header=0)
             matching_rows = df[df['key'].str.contains(keyword, case=False, na=False)]
             if len(matching_rows) > 0:
                 random_index = random.randint(0, len(matching_rows) - 1)
