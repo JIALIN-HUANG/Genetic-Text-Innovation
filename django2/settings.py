@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q185*!_gkm1!0nwt&fc5uy36$267*3ms#$w-whdg7r!nu6_l&&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -118,12 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    #设置静态文件目录
-    os.path.join(BASE_DIR, 'static'),
-    # BASE_DIR / 'static',
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if DEBUG or sys.argv[1] == 'runserver':
+    STATICFILES_DIRS = [
+        #设置静态文件目录
+        os.path.join(BASE_DIR, 'static'),
+        # BASE_DIR / 'static',
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
