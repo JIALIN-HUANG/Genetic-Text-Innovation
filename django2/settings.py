@@ -119,14 +119,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-if DEBUG or sys.argv[1] == 'runserver':
-    STATICFILES_DIRS = [
-        #设置静态文件目录
-        os.path.join(BASE_DIR, 'static'),
-        # BASE_DIR / 'static',
-    ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    #设置静态文件目录
+    os.path.join(BASE_DIR, 'static'),
+    # BASE_DIR / 'static',
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
