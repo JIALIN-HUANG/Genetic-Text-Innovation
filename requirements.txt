@@ -1,4 +1,5 @@
 Django==4.1.7
+whitenoise==6.5.0
 pandas==1.5.3
 boto3==1.26.109
 smart-open==6.3.0
