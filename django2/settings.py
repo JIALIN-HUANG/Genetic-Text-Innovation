@@ -27,7 +27,7 @@ ENV = os.environ.get('environment', 'dev').lower()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if ENV == 'dev' else False
 
-ALLOWED_HOSTS = ['*', '.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -79,7 +79,12 @@ WSGI_APPLICATION = 'django2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {} # Prevent Django from loading an adapter
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
